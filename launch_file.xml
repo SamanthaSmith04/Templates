@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="argument" default="default_value"/>
+
+    <node pkg="package_name" type="node_type" name="node_name" output="screen">
+        <param name="parameter_name" value="$(arg argument)"/>
+    </node>
+
+    <!-- Launch RVIZ with configs -->
+    <node pkg="rviz2" exec="rviz2" output="screen" args="$(find-pkg-share package_name)/rviz_config_file.rviz"/>
+
+</launch>
