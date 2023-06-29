@@ -24,3 +24,6 @@ def main(args=None):
     node.send_request()
     rclpy.spin(node)
     rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
