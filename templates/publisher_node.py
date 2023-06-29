@@ -7,10 +7,11 @@ from type_location import Type
 import RelevantFunctions
 
 class PublisherNode(Node):
-    super().__init__("publisher_node")
-    self.pub = self.create_publisher(Type, "service_node_name", 10)
-    self.timer = self.create_timer(1.0, self.timer_callback)
-    self.i = 0
+    def __init__(self):
+        super().__init__("publisher_node")
+        self.pub = self.create_publisher(Type, "service_node_name", 10)
+        self.timer = self.create_timer(1.0, self.timer_callback)
+        self.i = 0
 
     def timer_callback(self):
         msg = Type()
